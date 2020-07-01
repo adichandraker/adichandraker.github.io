@@ -3,14 +3,14 @@
 body {
     font-family: 'Roboto Mono', monospace;
     height:100vh;
-    background: url('lavaliz.jpg');
-    background-repeat: no-repeat;
-    background-color: black;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: white;
+    background-color: black;
 }
 
-.container {
+.TypewriterSlide {
+    background: url('lavaliz.jpg');
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,13 +18,13 @@ body {
     padding: 0 3rem;
 }
 
-h1 {
+.TypewriterSlide h1 {
     font-weight: 200;
     font-size: 3.5 rem;
     margin: 0.4rem;
 }
 
-h2 {
+.TypewriterSlide h2 {
     font-weight: 200;
     font-size: 2 rem;
     margin: 0.4rem;

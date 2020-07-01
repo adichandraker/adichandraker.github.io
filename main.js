@@ -1,11 +1,11 @@
 const TypeWriter = function (txtElement, words, wait = 3000) {
-    this.txtElement = txtElement;
-    this.words = words;
-    this.txt = '';
-    this.wordIndex = 0;
-    this.wait = parseInt(wait, 10);
-    this.type();
-    this.isDeleting = false;
+    this.txtElement = txtElement; // HTML place of interaction
+    this.words = words; // array of words
+    this.txt = ''; // a variable for the 
+    this.wordIndex = 0; // index of adding word of the words array
+    this.wait = parseInt(wait, 10); // 3000 ms
+    this.type(); // 
+    this.isDeleting = false; // deleting vs adding letters
 }
 
 // Type Method
