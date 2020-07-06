@@ -17,8 +17,18 @@
 </head>
 
 <body>
+    <!-- navbar -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times; </a>
+        <a href="#">Resume</a>
+        <a href="#">not</a>
+        <a href="#">up</a>
+        <a href="#">yet</a>
+    </div>
+    <!-- <span style="font-size: 30px; cursor: pointer;" onclick="openNav()"> &#9776; </span> -->
     <!-- Typewriter slide -->
     <div class="TypewriterSlide">
+        <span style="font-size: 30px; cursor: pointer;" onclick="openNav()"> &#9776; </span>
         <h1>Adi is
             <span class="txt-type" data-wait="3000" data-words='["Great","a Pianist","Adi"]'></span>
         </h1>
@@ -26,9 +36,16 @@
     </div>
 
     <!-- About Me slide -->
-    <div>
+    <div class="AboutMe">
         <h1>This is my site</h1>
     </div>
+
+    <!-- Random chess slide -->
+    <!-- <div>
+        <iframe src="https://fritz.chessbase.com" style="width:760px;height:480px"></iframe>
+    </div> -->
+
+
 
     <!-- link to js -->
     <script src="main.js"></script>

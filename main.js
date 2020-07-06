@@ -58,3 +58,26 @@ function init() {
     // initialize typewriter
     new TypeWriter(txtElement, words, wait);
 }
+
+// Idea of scroll with image modification
+
+/*window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    console.log(scrolled);
+})*/
+
+// Navbar
+function openNav(){
+    var DistanceSide = "180px";
+    document.getElementById("mySidenav").style.width = DistanceSide;
+    document.getElementById("TypewriterSlide").style.marginLeft = DistanceSide;
+    document.getElementById("AboutMe").style.marginLeft = DistanceSide;
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav(){
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("TypewriterSlide").style.marginLeft = "0";
+    document.getElementById("AboutMe").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+}
