@@ -75,7 +75,13 @@ function closeNav(){
 
 // Scroll with image modification
 window.addEventListener('scroll', function() {
-    const theOpacity = Math.abs((10 - window.pageYOffset/100)/10);
-    console.log(theOpacity);
-    document.getElementById("TypewriterSlide").style.opacity = theOpacity;
+    document.getElementById("TypewriterSlide").style.opacity = (window.innerHeight - window.pageYOffset)/1000;
 })
+
+// Progress Bar
+let progress = document.getElementById('ProgressBar');
+let totalHeight = document.body.scrollHeight - window.innerHeight;
+window.onscroll = function () {
+    let progressHeight = (window.pageYOffset / totalHeight) *100;
+    progress.style.height = progressHeight + "%";
+}

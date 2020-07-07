@@ -19,6 +19,8 @@ body {
     justify-content: center;
     height: 100%;
     padding: 0 3rem;
+    scrollbar-color: red;
+    scrollbar-width: thin;
 }
 
 .TypewriterSlide h1 {
@@ -102,3 +104,40 @@ body {
     .sidenav a {font-size: 1rem;}
 }
 /* Navbar end */
+
+
+/* scrollBar start */
+::-webkit-scrollbar{
+    width: 0;
+}
+
+#ProgressBar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: .4rem;
+    opacity: 1;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+}
+
+#ScrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: .4rem;
+    height: 100%;
+    opacity: .5;
+    background:white;
+}
+
+@keyframes animate {
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* scrollBar end */
