@@ -4,17 +4,16 @@
 body {
     font-family: 'Roboto Mono', monospace;
     height:100vh;
-    /* overflow: hidden;*/ /*makes scroll hidden */
     color: white;
     background-color: black;
-    transition: background-color .5s;
 }
 
-/* TypewriterSlide stuff start */
+/* TypewriterSlide start */
 .TypewriterSlide {
     background: url('lavaliz.jpg');
     background-repeat: no-repeat;
-    position: relative;
+    background-color: black;
+    opacity: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,9 +48,24 @@ body {
         font-size: 5rem;
     }
 }
-/* TypewriterSlide stuff end */
+/* TypewriterSlide end */
 
-/* Navbar stuff start */
+/* AboutMe start */
+
+.AboutMe {
+    height: 100%;
+    padding: 0 3rem;
+    background-color: black;
+}
+
+.AboutMe h1 {
+    font-weight: 200;
+    margin: 0.4rem;
+}
+
+/* AboutMe end */
+
+/* Navbar start */
 .sidenav {
     height: 100%;
     width: 0;
@@ -62,13 +76,13 @@ body {
     background-color: black;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 50px;
+    padding-top: 3rem;
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: .5rem .5rem .5rem 2rem;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 2rem;
     color: blanchedalmond;
     display: block;
     transition: .3s;
@@ -79,25 +93,12 @@ body {
 }
 
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    font-size: 3rem;
 }
 
-#TypewriterSlide {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-#AboutMe {
-    transition: margin-left .5s;
-    padding: 16px;
-}
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {padding-top: 1rem;}
+    .sidenav a {font-size: 1rem;}
 }
-/* Navbar stuff end */
+/* Navbar end */

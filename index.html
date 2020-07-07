@@ -17,7 +17,8 @@
 </head>
 
 <body>
-    <!-- navbar -->
+
+    <!-- navbar to the left initially hidden -->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times; </a>
         <a href="#">Resume</a>
@@ -25,19 +26,24 @@
         <a href="#">up</a>
         <a href="#">yet</a>
     </div>
-    <!-- <span style="font-size: 30px; cursor: pointer;" onclick="openNav()"> &#9776; </span> -->
-    <!-- Typewriter slide -->
-    <div class="TypewriterSlide">
-        <span style="font-size: 30px; cursor: pointer;" onclick="openNav()"> &#9776; </span>
+
+    <!-- Top slide -->
+    <div id="TypewriterSlide" class="TypewriterSlide" style="opacity: 1;">
+
+        <!-- 3 line opening sidebar -->
+        <span style="font-size: 3em; cursor: pointer;" onclick="openNav()"> &#9776;</span>
+
+        <!-- Typewriter -->
         <h1>Adi is
             <span class="txt-type" data-wait="3000" data-words='["Great","a Pianist","Adi"]'></span>
         </h1>
         <h2>Welcome</h2>
+
     </div>
 
-    <!-- About Me slide -->
-    <div class="AboutMe">
-        <h1>This is my site</h1>
+    <!-- Second slide -->
+    <div id="AboutMe" class="AboutMe">
+        <h1></br>This is my site...</h1>
     </div>
 
     <!-- Random chess slide -->
@@ -46,9 +52,9 @@
     </div> -->
 
 
-
     <!-- link to js -->
     <script src="main.js"></script>
+
 </body>
 
 </html>

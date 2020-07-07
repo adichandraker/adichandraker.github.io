@@ -59,25 +59,23 @@ function init() {
     new TypeWriter(txtElement, words, wait);
 }
 
-// Idea of scroll with image modification
-
-/*window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    console.log(scrolled);
-})*/
-
 // Navbar
 function openNav(){
-    var DistanceSide = "180px";
+    var DistanceSide = "170px";
     document.getElementById("mySidenav").style.width = DistanceSide;
     document.getElementById("TypewriterSlide").style.marginLeft = DistanceSide;
     document.getElementById("AboutMe").style.marginLeft = DistanceSide;
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav(){
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("TypewriterSlide").style.marginLeft = "0";
     document.getElementById("AboutMe").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
 }
+
+// Scroll with image modification
+window.addEventListener('scroll', function() {
+    const theOpacity = Math.abs((10 - window.pageYOffset/100)/10);
+    console.log(theOpacity);
+    document.getElementById("TypewriterSlide").style.opacity = theOpacity;
+})
