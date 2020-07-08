@@ -11,8 +11,6 @@ body {
 /* TypewriterSlide start */
 .TypewriterSlide {
     background: url('lavaliz.jpg');
-    background-repeat: no-repeat;
-    background-color: black;
     opacity: 1;
     display: flex;
     flex-direction: column;
@@ -48,6 +46,11 @@ body {
         font-size: 5rem;
     }
 }
+
+.ThreeBarBTN {
+    font-size: 3em; 
+    cursor: pointer;
+}
 /* TypewriterSlide end */
 
 /* AboutMe start */
@@ -56,10 +59,13 @@ body {
     height: 100%;
     padding: 0 3rem;
     background-color: black;
+    display: flex;
+    flex-direction: column;
 }
 
-.AboutMe h1 {
-    font-weight: 200;
+.AboutMe h2 {
+    font-weight: 1000;
+    font-size: 3rem;
 }
 
 .AboutMe h3{
@@ -118,8 +124,8 @@ body {
     right: 0;
     width: .4rem;
     opacity: 1;
-    background: linear-gradient(to top, #008aff, #00ffe7);
-    animation: animate 5s linear infinite;
+    background: white /* linear-gradient(to top, #008aff, #00ffe7); 
+    animation: animate 5s linear infinite; */ /* for RGB*/
 }
 
 @keyframes animate {
@@ -131,6 +137,3 @@ body {
     }
 }
 /* scrollBar end */
-
-
-

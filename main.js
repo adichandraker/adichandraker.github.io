@@ -63,24 +63,30 @@ function init() {
     fixHTMLparagraph();
 
     // Scroll with image modification
-    window.addEventListener('scroll', function() {
-        document.getElementById("TypewriterSlide").style.opacity = (window.innerHeight - window.pageYOffset)/1000;
+    window.addEventListener('scroll', function () {
+        document.getElementById("TypewriterSlide").style.opacity = (window.innerHeight - window.pageYOffset) / 1000;
     })
 }
 //
 
 // Navbar
-function openNav(){
-    var DistanceSide = "170px";
-    document.getElementById("mySidenav").style.width = DistanceSide;
-    document.getElementById("TypewriterSlide").style.marginLeft = DistanceSide;
-    document.getElementById("AboutMe").style.marginLeft = DistanceSide;
-}
-
-function closeNav(){
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("TypewriterSlide").style.marginLeft = "0";
-    document.getElementById("AboutMe").style.marginLeft = "0";
+function openNav() {
+    var tws = document.getElementById("TypewriterSlide");
+    var msn = document.getElementById("mySidenav");
+    var am = document.getElementById("AboutMe");
+    var tbb = document.getElementById("ThreeBarBTN");
+    var DistanceSide = "180px";
+    if (tbb.innerHTML.localeCompare("☰") === 0) {
+        msn.style.width = DistanceSide;
+        tws.style.marginLeft = DistanceSide;
+        am.style.marginLeft = DistanceSide;
+        tbb.innerHTML = "&#88;";
+    }else {
+        msn.style.width = "0";
+        tws.style.marginLeft = "0";
+        am.style.marginLeft = "0";
+        tbb.innerHTML = "&#9776;";
+    }
 }
 //
 
@@ -88,19 +94,21 @@ function closeNav(){
 let progress = document.getElementById('ProgressBar');
 let totalHeight = document.body.scrollHeight - window.innerHeight;
 window.onscroll = function () {
-    let progressHeight = (window.pageYOffset / totalHeight) *100;
+    let progressHeight = (window.pageYOffset / totalHeight) * 100;
     progress.style.height = progressHeight + "%";
 }
 //
 
 // fact check dates
-function fixHTMLparagraph (){
-    var age = calcAge (new Date(2003, 11, 1));
+function fixHTMLparagraph() {
+    var age = calcAge(new Date(2003, 11, 1));
     var tkdAge = calcAge(new Date(2008, 6, 1));
     var pianoAge = calcAge(new Date(2010, 3, 1));
     var clarinetAge = calcAge(new Date(2011, 10, 1));
-    document.getElementById("AboutMe").innerHTML = 
-    `</br><h1>About Me</h1>
+    document.getElementById("AboutMe").innerHTML =
+        `</br><h2>About Me</h2>
+    <h3></br>Contact Me</h3>
+    chandraker@gmail.com</br></br>
     <h3></br>Some Stuff (updated automatically with javascript Date objects)</h3>
     I am a student at Westhill High School, Stamford Ct,
     </br>I am ${age} years old
@@ -110,9 +118,9 @@ function fixHTMLparagraph (){
 }
 
 // Update Age
-function calcAge (aDate){
+function calcAge(aDate) {
     var diff_ms = Date.now() - aDate.getTime();
-    var age_dt = new Date(diff_ms); 
-  
+    var age_dt = new Date(diff_ms);
+
     return Math.abs(age_dt.getUTCFullYear() - 1970);
 }
