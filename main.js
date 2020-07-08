@@ -55,9 +55,19 @@ function init() {
     const txtElement = document.querySelector('.txt-type');
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     const wait = txtElement.getAttribute('data-wait');
+
     // initialize typewriter
     new TypeWriter(txtElement, words, wait);
+
+    // Fill date Sensitive info
+    fixHTMLparagraph();
+
+    // Scroll with image modification
+    window.addEventListener('scroll', function() {
+        document.getElementById("TypewriterSlide").style.opacity = (window.innerHeight - window.pageYOffset)/1000;
+    })
 }
+//
 
 // Navbar
 function openNav(){
@@ -72,11 +82,7 @@ function closeNav(){
     document.getElementById("TypewriterSlide").style.marginLeft = "0";
     document.getElementById("AboutMe").style.marginLeft = "0";
 }
-
-// Scroll with image modification
-window.addEventListener('scroll', function() {
-    document.getElementById("TypewriterSlide").style.opacity = (window.innerHeight - window.pageYOffset)/1000;
-})
+//
 
 // Progress Bar
 let progress = document.getElementById('ProgressBar');
@@ -84,4 +90,29 @@ let totalHeight = document.body.scrollHeight - window.innerHeight;
 window.onscroll = function () {
     let progressHeight = (window.pageYOffset / totalHeight) *100;
     progress.style.height = progressHeight + "%";
+}
+//
+
+// fact check dates
+function fixHTMLparagraph (){
+    var age = calcAge (new Date(2003, 11, 1));
+    var tkdAge = calcAge(new Date(2008, 6, 1));
+    var pianoAge = calcAge(new Date(2010, 3, 1));
+    var clarinetAge = calcAge(new Date(2011, 10, 1));
+    document.getElementById("AboutMe").innerHTML = 
+    `</br><h1>About Me</h1>
+    <h3></br>Some Stuff (updated automatically with javascript Date objects)</h3>
+    I am a student at Westhill High School, Stamford Ct,
+    </br>I am ${age} years old
+    </br>I have been practicing taekwondo for ${tkdAge} years
+    </br>I have been practicing piano for ${pianoAge} years
+    </br>I have been practicing clarinet for ${clarinetAge} years`;
+}
+
+// Update Age
+function calcAge (aDate){
+    var diff_ms = Date.now() - aDate.getTime();
+    var age_dt = new Date(diff_ms); 
+  
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
 }
