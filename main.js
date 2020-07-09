@@ -64,7 +64,7 @@ function init() {
 
     // Scroll with image modification
     window.addEventListener('scroll', function () {
-        document.getElementById("TypewriterSlide").style.opacity = (window.innerHeight - window.pageYOffset) / 1000;
+        document.getElementById("TypewriterSlide").style.opacity = (1 - window.pageYOffset/window.innerHeight);
     })
 }
 //
@@ -92,10 +92,18 @@ function openNav() {
 
 // Progress Bar
 let progress = document.getElementById('ProgressBar');
-let totalHeight = document.body.scrollHeight - window.innerHeight;
 window.onscroll = function () {
-    let progressHeight = (window.pageYOffset / totalHeight) * 100;
-    progress.style.height = progressHeight + "%";
+    console.log(getScrollPercent);
+    progress.style.height = getScrollPercent() + "%";
+}
+
+// Most precise way to get scroll
+function getScrollPercent() {
+    var h = document.documentElement, 
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
 }
 //
 
@@ -108,7 +116,7 @@ function fixHTMLparagraph() {
     document.getElementById("AboutMe").innerHTML =
         `</br><h2>About Me</h2>
     <h3></br>Contact Me</h3>
-    chandraker@gmail.com</br></br>
+    chandraker@gmail.com</br></br> 
     <h3></br>Some Stuff (updated automatically with javascript Date objects)</h3>
     I am a student at Westhill High School, Stamford Ct,
     </br>I am ${age} years old
