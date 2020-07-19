@@ -64,7 +64,7 @@ function init() {
 
     // Scroll with image modification
     window.addEventListener('scroll', function () {
-        document.getElementById("TypewriterSlide").style.opacity = (1 - window.pageYOffset/window.innerHeight);
+        document.getElementById("TypewriterSlide").style.opacity = (1 - window.pageYOffset / window.innerHeight);
     })
 }
 //
@@ -72,7 +72,7 @@ function init() {
 // Navbar
 function openNav() {
     var tws = document.getElementById("TypewriterSlide");
-    var msn = document.getElementById("mySidenav");
+    var msn = document.getElementById("SideNav");
     var am = document.getElementById("AboutMe");
     var tbb = document.getElementById("ThreeBarBTN");
     var DistanceSide = "180px";
@@ -81,7 +81,7 @@ function openNav() {
         tws.style.marginLeft = DistanceSide;
         am.style.marginLeft = DistanceSide;
         tbb.innerHTML = "&#88;";
-    }else {
+    } else {
         msn.style.width = "0";
         tws.style.marginLeft = "0";
         am.style.marginLeft = "0";
@@ -99,11 +99,11 @@ window.onscroll = function () {
 
 // Most precise way to get scroll
 function getScrollPercent() {
-    var h = document.documentElement, 
+    var h = document.documentElement,
         b = document.body,
         st = 'scrollTop',
         sh = 'scrollHeight';
-    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+    return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
 }
 //
 
@@ -114,7 +114,7 @@ function fixHTMLparagraph() {
     var pianoAge = calcAge(new Date(2010, 3, 1));
     var clarinetAge = calcAge(new Date(2011, 10, 1));
     document.getElementById("AboutMe").innerHTML =
-        `</br><h2>About Me</h2>
+        `<h2>About Me</h2>
     <h3></br>Contact Me</h3>
     chandraker@gmail.com</br></br> 
     <h3></br>Some Stuff (updated automatically with javascript Date objects)</h3>
@@ -131,4 +131,22 @@ function calcAge(aDate) {
     var age_dt = new Date(diff_ms);
 
     return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+
+function changeLDMode() {
+    var accessToStyle = document.documentElement.style;
+    if ((getComputedStyle(document.body).getPropertyValue('--bg-color')) === " black") {
+        console.log("got Here");
+        accessToStyle.setProperty('--bg-color', 'white');
+        accessToStyle.setProperty('--font-color', 'black');
+        accessToStyle.setProperty('--secondary', 'grey');
+        accessToStyle.setProperty('--termin-color', 'green');
+        accessToStyle.setProperty('--TPS-background-img', 'white');
+    }else {
+        accessToStyle.setProperty('--bg-color', ' black');
+        accessToStyle.setProperty('--font-color', 'white');
+        accessToStyle.setProperty('--secondary', 'blanchedalmond');
+        accessToStyle.setProperty('--termin-color', 'lightgreen');
+        accessToStyle.setProperty('--TPS-background-img', "url('lavaliz.jpg')");
+    }
 }

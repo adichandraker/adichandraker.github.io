@@ -19,35 +19,38 @@
 <body>
 
     <!-- navbar to the left initially hidden -->
-    <div id="mySidenav" class="sidenav">
+    <div id="SideNav">
         <a href="#">nothing</a>
         <a href="#">to</a>
         <a href="#">see</a>
         <a href="#">here</a>
         <a href="#">&#9785;</a>
+        <input type="checkbox" onclick="changeLDMode()"></input>
     </div>
 
     <!-- Scrollbar -->
     <div id="ProgressBar"></div>
 
     <!-- Top slide -->
-    <div id="TypewriterSlide" class="TypewriterSlide">
+    <div id="TypewriterSlide">
 
         <!-- 3 line opening sidebar -->
-        <span id="ThreeBarBTN" class="ThreeBarBTN" onclick="openNav()">&#9776;</span>
+        <span id="ThreeBarBTN" onclick="openNav()">&#9776;</span>
 
         <!-- Typewriter -->
-        <h1>Adi is <span class="txt-type" data-wait="3000" data-words='["a martial artist.","a musician.","a student.","creative"]'></span>
+        <h1>Adi is <span class="txt-type" data-wait="3000" data-words='["an artist.","a student.","alive"]'></span>
         </h1>
         <h2>Welcome</h2>
 
     </div>
 
     <!-- Second slide -->
-    <div id="AboutMe" class="AboutMe">
+    <div id="AboutMe">
         <!-- Empty Since javascript updates this section according to date -->
     </div>
 
+    <!-- Work on UI design Daily 
+    and light mode to dark mode -->
     <!-- link to js -->
     <script src="main.js"></script>
 

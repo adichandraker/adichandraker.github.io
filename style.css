@@ -1,16 +1,50 @@
 /* Roboto mono google font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
+/* CSS Variables */
+:root {
+    --bg-color: black;
+    --font-color: white;
+    --secondary: blanchedalmond;
+    --termin-color: lightgreen;
+    --dark-secondary: grey;
+    --TPS-background-img: url('lavaliz.jpg');
+}
+
+
 body {
     font-family: 'Roboto Mono', monospace;
     height:100vh;
-    color: white;
-    background-color: black;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+}
+
+input[type="checkbox"]{
+    height: 5rem;
+    width: 5rem;
+    -webkit-appearance: none;
+    border-radius: 150px;
+    background: var(--font-color);
+    box-shadow: inset 10px 10px 20px var(--secondary), 
+                inset -10px -10px 20px var(--font-color);
+    
+    outline: none;
+}
+
+input[type="checkbox"]:after{
+    color: var(--dark-secondary);
+}
+
+input[type="checkbox"]:checked{
+    background: var(--font-color);
+    box-shadow: inset 10px 10px 20px var(--secondary), 
+                inset -10px -10px 20px var(--font-color);
+    
 }
 
 /* TypewriterSlide start */
-.TypewriterSlide {
-    background: url('lavaliz.jpg');
+#TypewriterSlide {
+    background: var(--TPS-background-img);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,26 +52,26 @@ body {
     padding: 0 3rem;
 }
 
-.TypewriterSlide * {
+#TypewriterSlide * {
     font-weight: 200;
     margin: 0.4rem;
 }
 
-.TypewriterSlide h1 {
+#TypewriterSlide h1 {
     font-size: 3.5 rem;
 }
 
-.TypewriterSlide h2 {
+#TypewriterSlide h2 {
     font-size: 2 rem;
-    color: blanchedalmond;
+    color: var(--secondary);
 }
 
 /* Cursor */
 .txt-type > .txt {
-    border-right: 0.2rem solid blanchedalmond;
+    border-right: 0.2rem solid var(--secondary);
 }
 
-.ThreeBarBTN {
+#ThreeBarBTN {
     font-size: 3em; 
     cursor: pointer;
 }
@@ -45,72 +79,58 @@ body {
 
 /* AboutMe start */
 
-.AboutMe {
+#AboutMe {
     height: 100%;
     padding: 0 3rem;
-    background-color: black;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
 }
 
-.AboutMe h2 {
+#AboutMe h2 {
     font-size: 3rem;
 }
 
-.AboutMe h3{
-    color: lightgreen;
+#AboutMe h3{
+    color: var(--termin-color);
 }
 /* AboutMe end */
 
 /* Navbar start */
-.sidenav {
+#SideNav {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: var(--bg-color);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 3rem;
 }
 
-.sidenav a {
+#SideNav a {
     padding: .5rem .5rem .5rem 2rem;
     text-decoration: none;
     font-size: 2rem;
-    color: blanchedalmond;
+    color: var(--secondary);
     display: block;
     transition: .3s;
 }
 
-.sidenav a:hover {
-    color: white;
+#SideNav input {
+    margin-left: 2rem;
 }
 
-.sidenav .closebtn {
-    font-size: 3rem;
+#SideNav a:hover {
+    color: var(--font-color);
 }
 /* Navbar end */
 
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 1rem;}
-    .sidenav a {font-size: 1rem;}
-    
-}
-
-@media(min-width: 1200px) {
-    h1 {
-        font-size: 5rem;
-    }
-}
-
 /* scrollBar start */
-::-webkit-scrollbar{
-    display: none; /*makes the scroll disapear */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+::-webkit-scrollbar {
+    width: 0; /* removes old one */
 }
 
 #ProgressBar{
@@ -118,7 +138,7 @@ body {
     top: 0;
     right: 0;
     width: .4rem;
-    background: white /* linear-gradient(to top, #008aff, #00ffe7); 
+    background: var(--font-color) /* linear-gradient(to top, #008aff, #00ffe7); 
     animation: animate 5s linear infinite; */ /* for RGB*/
 }
 
@@ -131,3 +151,16 @@ body {
     }
 }
 /* scrollBar end */
+
+/* Support for Different Sizes */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 1rem;}
+    .sidenav a {font-size: 1rem;}
+    
+}
+
+@media(min-width: 1200px) {
+    h1 {
+        font-size: 5rem;
+    }
+}
